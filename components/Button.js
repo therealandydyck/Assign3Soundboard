@@ -8,13 +8,13 @@ import { Pressable, Text, View } from "react-native";
 import ButtonStyles from './styles/button-styles.js';
 
 
-export const Button = () => {
+export const Button = (bTitle, ) => {
 
     return (
         <View style={{padding: 10}}>
             <Pressable style={[ButtonStyles.button]}
-                title=""
-                onPress={}/>
+                title={bTitle}
+                onPress={() => {}}/>
         </View>
     )
 }
