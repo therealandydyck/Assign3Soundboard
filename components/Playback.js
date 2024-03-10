@@ -1,25 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { Audio } from 'expo-av';
 import ButtonStyles from '../styles/button-styles';
 import PageStyles from '../styles/page-styles';
 
 
-export default function App() {
+export default function App({importUri}) {
 const [myPBO, setMyPBO] = useState(null);
-const [myLocalPBO, setMyLocalPBO] = useState(null);
 const [playbackStatus, setPlaybackStatus] = useState("Unloaded");
 const remoteUri = { uri: 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'};
-const localUri = '../assets/sound3.m4a';
-
+const localUri = importUri;
+  
 // load a sounds into the PBO
 const loadSound = async (uri, isLocal) => {
   if (isLocal) {
-    const { sound } = await Audio.Sound.createAsync(require('../assets/sound3.m4a'));
+    const { sound } = await Audio.Sound.createAsync(localUri);
     setMyPBO(sound);
   } else {
-    const { sound } = await Audio.Sound.createAsync(uri);
+    const { sound } = await Audio.Sound.createAsync(remoteUri);
     setMyPBO(sound);
   }
     setPlaybackStatus('Loaded');
@@ -80,22 +79,3 @@ useEffect(() => {
   );
 }
 
-const styles = StyleSheet.create({
-  button: {
-    borderWidth: 2,
-    borderStyle: 'solid',
-    borderColor: 'black',
-    backgroundColor: 'lightgreen',
-    margin: 10,
-    padding: 10,
-  },
-  buttonText: {
-    fontSize: 24,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

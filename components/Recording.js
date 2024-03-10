@@ -1,8 +1,7 @@
-import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
 import { Audio } from 'expo-av';
 import ButtonStyles from '../styles/button-styles';
-import PageStyles from '../styles/page-styles';
 
 
 

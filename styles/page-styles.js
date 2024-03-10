@@ -25,6 +25,14 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 24,
     },
+
+    recordRow: {
+      flex: 1,
+      flexDirection: 'row',
+      width: '100%',
+      justifyContent: 'center',
+
+    },
     
   });
 
