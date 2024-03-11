@@ -5,7 +5,7 @@
  * \brief main soundboard function
  */
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import PageStyles from './styles/page-styles';
 import Playback from './components/Playback';
 import Recording from './components/Recording';
@@ -15,9 +15,9 @@ export default function App() {
   return (
     <View style={PageStyles.page}>
 
-
-
-    <View style='flex: 0.4,'></View>
+    <View style={PageStyles.heading}>
+      <Text style={PageStyles.heading}>A Sound Board!</Text>
+    </View>
       
       <View style={PageStyles.recordRow}>
         <Playback style=''

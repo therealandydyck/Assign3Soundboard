@@ -13,14 +13,11 @@ const remoteUri = { uri: 'https://www.learningcontainer.com/wp-content/uploads/2
 const localUri = importUri;
   
 // load a sounds into the PBO
-const loadSound = async (uri, isLocal) => {
-  if (isLocal) {
+const loadSound = async () => {
+ 
     const { sound } = await Audio.Sound.createAsync(localUri);
     setMyPBO(sound);
-  } else {
-    const { sound } = await Audio.Sound.createAsync(remoteUri);
-    setMyPBO(sound);
-  }
+  
     setPlaybackStatus('Loaded');
 }
 
@@ -55,7 +52,7 @@ const unloadPBO = async () => {
 
 // load sound on start up (and unload when we are leaving)
 useEffect(() => {
-  loadSound(localUri,true); // no await is fine in useEffect
+  loadSound(); // no await is fine in useEffect
   return (
     myPBO ? () => {unloadPBO()} : undefined
   )

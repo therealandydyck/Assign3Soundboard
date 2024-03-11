@@ -9,10 +9,9 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flex: 0.3,
-      
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center',
+      
     },
 
     page: {
@@ -33,6 +32,15 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
 
     },
+
+    heading: {
+      flex: 0.4,
+      fontSize: 24,
+      fontWeight: 'bold',
+      justifyContent: 'center',
+      alignContent: 'center',
+      marginTop: 40,
+    },  
     
   });
 
