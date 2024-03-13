@@ -39,17 +39,14 @@ export default function App() {
       <View style={PageStyles.recordRow}>
         <Recording style='' 
           title='Recording'
-          buttonId='1'
         />
 
         <Recording style='' 
           title='Recording'
-          buttonId='2'
         />
 
         <Recording style='' 
           title='Recording'
-          buttonId='3'
         />
       </View>
       
