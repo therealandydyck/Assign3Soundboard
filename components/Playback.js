@@ -9,7 +9,6 @@ import PageStyles from '../styles/page-styles';
 export default function App({importUri}) {
 const [myPBO, setMyPBO] = useState(null);
 const [playbackStatus, setPlaybackStatus] = useState("Unloaded");
-const remoteUri = { uri: 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'};
 const localUri = importUri;
   
 // load a sounds into the PBO
